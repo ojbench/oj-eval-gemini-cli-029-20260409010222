@@ -389,9 +389,9 @@ int driver_post(char *userid, char *result, int autograded, char *status_msg)
 		return 0;
 	}
 
-	userid = getenv("USER");
-	status = submitr(SERVER_NAME, 
-			SERVER_PORT,
+	        userid = getenv("USER");
+	        if (userid == NULL) userid = "unknown";
+	        status = submitr(SERVER_NAME,			SERVER_PORT,
 			 COURSE_NAME,
 			 userid,
 			 LAB,
